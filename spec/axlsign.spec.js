@@ -103,4 +103,13 @@ describe('axlsign', function () {
 
         expect(sk1).toEqual(sk2);
     });
+
+    it('should derive public key', function() {
+        var seed1 = crypto.randomBytes(32);
+
+        var k1 = axlsign.generateKeyPair(seed1);
+        var sk1 = axlsign.derivePublicKey(k1.private);
+
+        expect(k1.public).toEqual(sk1);
+    });
 });

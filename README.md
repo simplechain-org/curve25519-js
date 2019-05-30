@@ -56,6 +56,10 @@ The result should not be used directly as a key, but should be processed with a
 one-way function (e.g. *HSalsa20* as in NaCl, or any secure cryptographic hash
 function, such as *SHA-256*, or key derivation function, such as *HKDF*).
 
+### derivePublicKey(privateKey) -> publicKey
+
+Provide it with your secret key as a 32-bytes-long Buffer and get a Buffer containing your public key as the result.
+
 ## How is it different from Ed25519?
 
 Axlsign allows calculating key agreement and signing using just a single
